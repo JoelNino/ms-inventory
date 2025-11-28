@@ -1,6 +1,15 @@
 from django.urls import path
-from .views import stock_por_producto
+
+# Commands
+from inventory.commands.adjust_stock import adjust_stock
+
+# Queries
+from inventory.queries.stock_por_producto import stock_por_producto
 
 urlpatterns = [
-    path('productos/<int:product_id>/stock/', stock_por_producto),
+    # COMMANDS
+    path('inventory/adjust-stock/', adjust_stock),           # POST
+
+    # QUERIES
+    path('inventory/stock/<str:sku>/', stock_por_producto),  # GET
 ]

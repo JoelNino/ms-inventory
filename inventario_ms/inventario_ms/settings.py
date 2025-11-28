@@ -6,7 +6,6 @@ SECRET_KEY = 'django-insecure-aj0=wpqd=+p$x338pmg(!20q&!7(#vm67*1ls5az7x1eru!^kd
 
 DEBUG = True
 
-# ✅ permitir acceso desde cualquier host
 ALLOWED_HOSTS = ["*"]
 
 INSTALLED_APPS = [
@@ -16,8 +15,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
-    # ✅ necesarias
     'rest_framework',
     'inventario',
 ]
@@ -51,14 +48,13 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'inventario_ms.wsgi.application'
 
-# ✅ CONFIGURACIÓN CORRECTA PARA TU BD EN AWS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'monitoring_db',
         'USER': 'monitoring_user',
         'PASSWORD': 'isis2503',
-        'HOST': '54.224.249.76',
+        'HOST': '54.175.247.250',
         'PORT': '5432',
     }
 }
